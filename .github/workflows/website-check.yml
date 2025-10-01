@@ -22,5 +22,5 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Run checks (score only)
+      - name: Run website checks
         run: npm run check:all
