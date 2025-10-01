@@ -8,15 +8,19 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci || npm install
 
-      - name: Run checks
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run checks (score only)
         run: npm run check:all

@@ -4,9 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check:structure": "node scripts/check-structure-seo.mjs",
-    "check:scroll": "node scripts/check-horizontal-scroll.mjs",
-    "check:all": "npm run check:structure && npm run check:scroll"
+    "check:all": "node scripts/check-all.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
